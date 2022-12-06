@@ -1,0 +1,82 @@
+/**
+ * ? npm init y  : Inicializa el proyecto pero proporciona la informacion tu mismo. sino crea un archivo crea un archivo package.json si no esta.
+ * ? npm init yet
+ * ? npm i(install) express
+ * ? npm i(install) express socket.io
+ * ! npm i nodemon -D (Dependencia de desarrollo: va ha colocarlo en otra sesion llamada des dependecies: decirle, este modulo no es importante para el proyecto )
+ * ! npm install -g npm-check-updates Actualizar dependencias.
+*/
+
+UrlVideo: https://youtu.be/K8YELRmUb5o
+mongo: esneider.dev  pass: xYX8akkAmtY0yuLW
+
+Vamos a correr los siguientes comandos:
+// Instalar nodemon "-g" de manera global. 
+npm i -g nodemon 
+
+//en_: run "npm i express" for our librery "body-parser" to process the requests body be Crypto or password encryption "cors" for cross-origin requests dot EnV for environment 
+       variables grid FS Dash let me spell that correctry "createsf-stream" for file upload as well as multir and "multer-gridfs-storage" so we can upload our files locally
+       and then we're going to have "helmet" force request safety "morgan" for logging Json web token for authentication and mongoose for mongodb access.
+//es_: Instalar express para nuestra libreria body-parser para procesar el cuerpo de la peticion sea "bcrypt" o "encriptación de contraseña password", "cors" para solicitudes 
+       de origen cruzado "dotenv" para variables de entorno, "gridfs-stream" para subir archivos, asi como "multer multer-gridfs-storage" para que podamos cargar nuestros archivos localmente
+       y luego vamos a tener "helmet" forzar la seguridad de la solicitud "morgan" para logging (inicio de sesion) "jsonwebtoken" para el registro Json web token para la autenticación
+
+
+commands: npm i express body-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken mongoose
+
+===============================================================================================================================================================
+found 0 vulnerabilities
+PS C:\Users\Desarrollador4\Desktop\MERN\server> npm i express body-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken mongoose
+npm WARN deprecated @types/bson@4.2.0: This is a stub types definition. bson provides its own type definitions, so you do not need this installed.
+npm WARN deprecated multer@1.4.4: Multer 1.x is affected by CVE-2022-24434. This is fixed in v1.4.4-lts.1 which drops support for versions of Node.js before 6. Please upgrade to at least Node.js 6 and version 1.4.4-lts.1 of Multer. If you need support for older versions of Node.js, we are open to accepting patches that would fix the CVE on the main 1.x release line, whilst maintaining compatibility with Node.js 0.10.
+
+added 279 packages, and audited 280 packages in 1m
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+4 high severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+===============================================================================================================================================================================
+
+dependencias han sido creadas
+"dependencies": {
+  "bcrypt": "^5.1.0",
+  "body-parser": "^1.20.1",
+  "cors": "^2.8.5",
+  "dotenv": "^16.0.3",
+  "express": "^4.18.2",
+  "gridfs-stream": "^1.1.1",
+  "helmet": "^6.0.1",
+  "jsonwebtoken": "^8.5.1",
+  "mongoose": "^6.8.0",
+  "morgan": "^1.10.0",
+  "multer": "^1.4.4",
+  "multer-gridfs-storage": "^5.0.2"
+}
+
+//ejecutamo el siguiente comando
+npm init -y
+Se agrega en package.json: 
+"name": "server",
+"version": "1.0.0",
+"main": "index.js",
+"devDependencies": {},
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+"keywords": [],
+"author": "",
+"license": "ISC",
+"description": ""
+
+//Agregamos una linea en package.json "type": "module", esto es para que podamos usar cosas como declaraciones de imporacion en lugar de required
+
+11:33
