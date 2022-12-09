@@ -79,4 +79,14 @@ Se agrega en package.json:
 
 //Agregamos una linea en package.json "type": "module", esto es para que podamos usar cosas como declaraciones de imporacion en lugar de required
 
-11:33
+
+1 (14:40)
+2 (15:10)
+
+
+
+
+
+
+
+
