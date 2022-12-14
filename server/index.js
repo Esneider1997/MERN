@@ -1,4 +1,4 @@
-import express from "express";
+import express, { application } from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -51,3 +51,20 @@ const upload = multer({ storage })
 
 //  And from here we´re going to actually setup our Mongo Database
 // y desde aqui nosotros vamos a configurar nuestra base de datos. 
+
+//(26:06) Aqui vamos a escribir nuestra funcion de autenticacion de registro
+// aqui vamos a registrar la API desde el front
+/* ROUTES WITH FILES */
+app.post("/auth/register", upload.single("picture"), register)
+//Nota: Esto hace que vamos a subir nuestra foto localmente en los activos
+
+/* MONGOOSE SEUP  */
+const PORT = process.env.PORT || 6001
+mongoose.set('strictQuery', false); // add for my
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(()=>{
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+}).catch( (error) => console.log(`${error} did not connect`)) 
+//(20: 30) apartir de aqui puedes abrir tu terminal e intentar correrlo

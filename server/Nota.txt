@@ -1,3 +1,6 @@
+UrlVideo: https://youtu.be/K8YELRmUb5o
+mongo: esneider.dev  pass: xYX8akkAmtY0yuLW
+
 /**
  * ? npm init y  : Inicializa el proyecto pero proporciona la informacion tu mismo. sino crea un archivo crea un archivo package.json si no esta.
  * ? npm init yet
@@ -6,9 +9,6 @@
  * ! npm i nodemon -D (Dependencia de desarrollo: va ha colocarlo en otra sesion llamada des dependecies: decirle, este modulo no es importante para el proyecto )
  * ! npm install -g npm-check-updates Actualizar dependencias.
 */
-
-UrlVideo: https://youtu.be/K8YELRmUb5o
-mongo: esneider.dev  pass: xYX8akkAmtY0yuLW
 
 Vamos a correr los siguientes comandos:
 // Instalar nodemon "-g" de manera global. 
@@ -83,10 +83,51 @@ Se agrega en package.json:
 1 (14:40)
 2 (15:10)
 
+//user:esneider
+//4DqvE6Bz1qBST6xS
+
+//pasos: nos vamos a browse Colletion en el area de Colletions, esta localizacion es donde tu tienes tu base de datos y tu informacion
+(17:00)
+
+// Si queremos cambiar nuestro acceso a la red nos v amos a Network Access
+// (17:20) Database -> Connect -> Conncet your application: Copiamos la url
+
+/ /== FILE:.ENV
+
+// Creamos nuestro archivo .env y agregamos: 
+MONGO_URL='mongodb+srv://esneider:<password>@cluster0.5rtgbr0.mongodb.net/?retryWrites=true&w=majority'
+//NOTA: EN LA URL TENEMOS QUE REMPLASAR :<password> y tenemos que agregar nuestra contraseña
+// Agregamos el puerto
+PORT=3001
+
+/ /== FILE: index.js
+//(18:22) Vamos a configurar nuestro mongoose
+//(20: 30) apartir de aqui puedes abrir tu terminal e intentar correrlo con: 
+nodemon index.js
+//NOTA: Para reparar el erro en la terminal (DeprecationWarning: Mongoose: the `strictQuery` option w ill be switched back to `false` by default in Mongoose 7)
+        agregamos la siguiente linea mongoose.set('strictQuery', false);
 
 
 
 
+(20:45)we should be doing before we jump in and writing our APIs and that is we can take a look at the final build or we can take  
+a look at mocks whatever you have and you want to see how you´re going to organize your data model, what data models are ways of organizing your data in nice succinct category
 
+Antes de escribir nuestras apis y eso, podemos echar un vistazo a nuestra construccion final o podemos tomar de cualquiera cosa que tengas y ver como va hacer tu estructura de 
+modelo de datos. Los modelos son formados por la organizacion de tus datos en agradables categorias y asegurarse de que esten separados entre si una de la otra y podamos hacer relaciones
+entre el uno y el otro, cmoa a usar MongoDB que es un poco mas libre comprarado a las bases de datos de tipo SQL donde todo esta relacionado, pero auna asi es importante tratar de organizar
+de antemano para que cuendo entres el codigo tenga una buena estructura y puedas ahorrar mucho tiemo haciendo esto, asi que echas una mirada a esta compilazion que queremos categorizar.
+hay algunas cosas que notarias, es que podemos organizarlo a travez de usuarios, es bastante obvio pero este es un usuario y va a tener una ubicacion asociada, cierto numero de vista de impresiones,+
+asi como sus redes sociales, asi como las publicaciones, amigos, numeros de comentarios y me gustas.
 
+(23:00) En el sigueinte diagrama "model_for_db.png" podemos ver el ejemplo de amigos, es un arreglo de objetos lo que significa que queramos ser capaces de crear
+ una matriz de este tipo de objetos dentro de la lista de amigos, asi que vamos a tener una matriz de este tipo por lo que una matriz de de ID, Nombre, apellido, imagenes, 
+ lugar y ocupaciones, ahora hay un par de cosas que son para ti en tu interprecacion para saber si quieres hacerlo de esta manera u otra. 
+ 
+// For example: for example, what I could have done with the friends is I could have put an array de IDs, so I get a list of arrays of IDs  that refer back to itself because friends could be a user as well so we can instead put friends of IDs however MONGODB always suggested prefer to keeo sub-documents whenever you can so that allow you to have information more easily accessible
+// Por ejemplo: por ejemplo, lo que podría haber hecho con los amigos es que podría haber puesto una matriz de ID, por lo que obtengo una lista de matrices de ID que se refieren a sí mismas porque los amigos también podrían ser usuarios, por lo que podemos poner amigos de Sin embargo, las identificaciones MONGODB siempre sugirieron preferir mantener subdocumentos siempre que pueda para permitirle tener información más fácilmente accesible
 
+(24:00) you only want to do referrals of IDs, if you need to so this is just a little bit more od and advanced tip but this is how you would structure your database
+        solo desea hacer referencias de ID, si es necesario, por lo que este es un consejo un poco más extraño y avanzado, pero así es como estructuraría su base de datos
+
+(25:21) you can see better(mejor) and the first thins, we going to do is we're going tackle(abordar) tackle authentication and authorization which is going to be arguably the hardest part of application
